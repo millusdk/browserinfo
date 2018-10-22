@@ -1,6 +1,6 @@
 {
   "name": "@millusdk/browserinfo",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "description": "This package provides information about the users current browser",
   "scripts": {
     "build": "webpack --mode production",
