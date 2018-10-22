@@ -1,6 +1,6 @@
 export function operatingSystem() {
   var operatingSystemName = NaN;
-  var userAgent = navigator.userAgent;
+  var userAgent = window.navigator.userAgent;
   var osNamesTokens = [{
     osName: "Windows 2000",
     osToken: /(Windows NT 5.0|Windows 2000)/,
@@ -81,7 +81,7 @@ export function operatingSystem() {
   }
 
   var operatingSystemVersion = "";
-  var navigatorVersion = navigator.appVersion;
+  var navigatorVersion = window.navigator.appVersion;
   switch (operatingSystemName) {
   case "Windows Phone":
     operatingSystemVersion = userAgent.substring(userAgent.indexOf("Windows Phone") + 14);
@@ -102,7 +102,7 @@ export function operatingSystem() {
     break;
   }
 
-  if(operatingSystemName.indexOf("Windows") !== -1 && operatingSystemName.indexOf("Phone") === -1){
+  if(operatingSystemName && operatingSystemName.indexOf("Windows") !== -1 && operatingSystemName.indexOf("Phone") === -1){
     let lastSpace = operatingSystemName.lastIndexOf(" ");
 
     if(lastSpace !== -1)
