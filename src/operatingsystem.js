@@ -83,30 +83,29 @@ export function operatingSystem() {
   var operatingSystemVersion = "";
   var navigatorVersion = window.navigator.appVersion;
   switch (operatingSystemName) {
-  case "Windows Phone":
-    operatingSystemVersion = userAgent.substring(userAgent.indexOf("Windows Phone") + 14);
-    operatingSystemVersion = operatingSystemVersion.substring(0, operatingSystemVersion.indexOf(";"));
-    break;
+    case "Windows Phone":
+      operatingSystemVersion = userAgent.substring(userAgent.indexOf("Windows Phone") + 14);
+      operatingSystemVersion = operatingSystemVersion.substring(0, operatingSystemVersion.indexOf(";"));
+      break;
 
-  case "Mac OS X":
-    operatingSystemVersion = /Mac OS X (10[\.\_\d]+)/.exec(userAgent)[1];
-    break;
+    case "Mac OS X":
+      operatingSystemVersion = /Mac OS X (\d[\.\_\d]+)/.exec(userAgent)[1];
+      break;
 
-  case "Android":
-    operatingSystemVersion = /Android ([\.\_\d]+)/.exec(userAgent)[1];
-    break;
+    case "Android":
+      operatingSystemVersion = /Android ([\.\_\d]+)/.exec(userAgent)[1];
+      break;
 
-  case "iOS":
-    operatingSystemVersion = /OS (\d+)_(\d+)_?(\d+)?/.exec(navigatorVersion);
-    operatingSystemVersion = operatingSystemVersion[1] + "." + operatingSystemVersion[2] + "." + (operatingSystemVersion[3] | 0);
-    break;
+    case "iOS":
+      operatingSystemVersion = /OS (\d+)_(\d+)_?(\d+)?/.exec(navigatorVersion);
+      operatingSystemVersion = operatingSystemVersion[1] + "." + operatingSystemVersion[2] + "." + (operatingSystemVersion[3] | 0);
+      break;
   }
 
-  if(operatingSystemName && operatingSystemName.indexOf("Windows") !== -1 && operatingSystemName.indexOf("Phone") === -1){
+  if (operatingSystemName && operatingSystemName.indexOf("Windows") !== -1 && operatingSystemName.indexOf("Phone") === -1) {
     let lastSpace = operatingSystemName.lastIndexOf(" ");
 
-    if(lastSpace !== -1)
-    {
+    if (lastSpace !== -1) {
       operatingSystemVersion = operatingSystemName.substring(lastSpace + 1);
       operatingSystemName = operatingSystemName.substring(0, lastSpace);
     }

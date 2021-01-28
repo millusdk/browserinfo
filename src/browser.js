@@ -6,7 +6,7 @@ function detectIEMobileVersion(userAgent, versionOffset) {
     version = version.substring(0, endIndex);
   }
 
-  browserInfo = { 
+  return { 
     browser, 
     version,
   };
@@ -18,7 +18,8 @@ function detectOperaVersion(userAgent, versionOffset) {
   if ((versionOffset = userAgent.indexOf("Version")) != -1) {
     version = userAgent.substring(versionOffset + 8);
   }
-  browserInfo = { 
+  
+  return { 
     browser, 
     version,
   };
@@ -30,7 +31,8 @@ function detectSafariVersion(userAgent, versionOffset) {
   if ((versionOffset = userAgent.indexOf("Version")) != -1) {
     version = userAgent.substring(versionOffset + 8);
   }
-  browserInfo = { 
+  
+  return { 
     browser, 
     version,
   };
@@ -43,7 +45,7 @@ function detectOtherBrowserVersion(userAgent, versionOffset, nameOffset) {
     browser = window.navigator.appName;
   }
 
-  browserInfo = { 
+  return { 
     browser, 
     version,
   };
@@ -130,6 +132,15 @@ export function browser() {
       browserInfo = { 
         browser, 
         version,
+      };
+    }
+    // Chromium Edge
+    else if ((versionOffset = userAgent.indexOf("Edg")) != -1) {
+      let browser = "Chromium Edge";
+
+      browserInfo = { 
+        browser, 
+        version: userAgent.substring(versionOffset + 4),
       };
     }
     // Chrome
