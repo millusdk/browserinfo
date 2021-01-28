@@ -89,7 +89,7 @@ export function operatingSystem() {
     break;
 
   case "Mac OS X":
-    operatingSystemVersion = /Mac OS X (10[\.\_\d]+)/.exec(userAgent)[1];
+    operatingSystemVersion = /Mac OS X (\d[\.\_\d]+)/.exec(userAgent)[1];
     break;
 
   case "Android":
