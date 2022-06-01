@@ -97,7 +97,7 @@ export function operatingSystem() {
       break;
 
     case "iOS":
-      operatingSystemVersion = /OS (\d+)_(\d+)_?(\d+)?/.exec(navigatorVersion);
+      operatingSystemVersion = /OS (\d+)_(\d+)_?(\d+)?/.exec(userAgent);
       operatingSystemVersion = operatingSystemVersion[1] + "." + operatingSystemVersion[2] + "." + (operatingSystemVersion[3] | 0);
       break;
   }
