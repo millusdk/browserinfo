@@ -27,7 +27,7 @@
     "chai": "^4.2.0",
     "eslint": "^5.7.0",
     "eslint-loader": "^2.1.1",
-    "mocha": "^6.2.3",
+    "mocha": "^10.2.0",
     "mocha-junit-reporter": "^1.18.0",
     "mocha-multi-reporters": "^1.1.7",
     "mock-browser": "^0.92.14",
